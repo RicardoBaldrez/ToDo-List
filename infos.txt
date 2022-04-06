@@ -3,3 +3,15 @@
     - npx create-react-app .
   Criando com a pasta
     - npx create-react-app 'nome do projeto'
+
+--> editorConfig
+  Extensão editorConfig
+   - Clicando com o botão direito, a última opção é 'Generate .editorConfig'
+    - Assim gerando já o arquivo com algumas configurações
+
+--> Eslint
+  Extensão eslint
+  Trazendo os pacotes
+    - npm i eslint babel-eslint --save-dev
+  Criando o arquivo
+    - npx eslint --init

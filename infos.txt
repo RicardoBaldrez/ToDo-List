@@ -1,0 +1,5 @@
+--> Creating app with React
+  Criando em uma pasta já existente
+    - npx create-react-app .
+  Criando com a pasta
+    - npx create-react-app 'nome do projeto'

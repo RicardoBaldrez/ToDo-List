@@ -1,0 +1,13 @@
+.main {
+  padding: 30px;
+  max-width: 640px;
+  margin: 50px auto;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main h1 {
+  font-size: 20px;
+  text-align: center;
+}

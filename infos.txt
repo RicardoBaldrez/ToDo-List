@@ -15,3 +15,8 @@
     - npm i eslint babel-eslint --save-dev
   Criando o arquivo
     - npx eslint --init
+
+
+--> React icons
+  Trazendo os pacotes
+    - npm i react-icons

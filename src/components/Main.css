@@ -78,3 +78,7 @@
   cursor: pointer;
   transition: all 300ms ease-in-out;
 }
+
+.tasks li div {
+  display: flex;
+}

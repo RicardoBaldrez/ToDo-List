@@ -24,6 +24,7 @@ export default class Main extends Component {
 
     const newTasks = [...tasks];
     this.setState({
+      newTask: '',
       tasks: [...newTasks, newTask],
     });
   };
@@ -31,6 +32,20 @@ export default class Main extends Component {
   handleChange = (e) => {
     this.setState({
       newTask: e.target.value,
+    });
+  };
+
+  handleEdit = (e, index) => {
+    console.log('Edit', index);
+  };
+
+  handleDelete = (e, index) => {
+    const { tasks } = this.state;
+    const newTasks = [...tasks];
+    newTasks.splice(index, 1);
+
+    this.setState({
+      tasks: [...newTasks],
     });
   };
 
@@ -46,7 +61,6 @@ export default class Main extends Component {
             onChange={this.handleChange}
             type="text"
             value={newTask}
-            className="input"
           />
           <button type="submit">
             <FaPlus />
@@ -54,12 +68,12 @@ export default class Main extends Component {
         </form>
 
         <ul className="tasks">
-          {tasks.map((task) => (
+          {tasks.map((task, index) => (
             <li key={task}>
               {task}
               <div>
-                <FaEdit className="edit" />
-                <FaWindowClose className="delete" />
+                <FaEdit onClick={(e) => this.handleEdit(e, index)} className="edit" />
+                <FaWindowClose onClick={(e) => this.handleDelete(e, index)} className="delete" />
               </div>
             </li>
           ))}

@@ -10,10 +10,28 @@ import './Main.css';
 
 export default class Main extends Component {
   state = {
-    newTask: '',
-    tasks: [],
     index: -1,
+    tasks: [],
+    newTask: '',
   };
+
+  componentDidMount() {
+    const tasksData = JSON.parse(localStorage.getItem('tasks'));
+
+    if (!tasksData) return;
+
+    this.setState({
+      tasks: tasksData,
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { tasks } = this.state;
+
+    if (tasks === prevState.tasks) return;
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -34,8 +52,9 @@ export default class Main extends Component {
       newTasks[index] = newTask;
 
       this.setState({
-        tasks: [...newTasks],
         index: -1,
+        newTask: '',
+        tasks: [...newTasks],
       });
     }
   };
